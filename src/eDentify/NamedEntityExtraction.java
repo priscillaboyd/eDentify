@@ -22,7 +22,8 @@ public class NamedEntityExtraction {
 		
 		ArrayList<String> words = new ArrayList<String>();
 		
-		try (BufferedReader reader = Files.newBufferedReader(path, Charset.defaultCharset())){
+		//Using Windows 1256 in case search returns non-UTF-8 characters
+		try (BufferedReader reader = Files.newBufferedReader(path, Charset.forName("windows-1256"))){
 	        while ((line = reader.readLine()) != null) {
 	        	words.add(line); //add each line to display
 	            System.out.println(line);
