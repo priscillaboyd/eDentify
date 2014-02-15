@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Documents/Education/University of London/Year 3/_Project/_Phase 3 - Construction/Google Gson 2.2.4 Library/google-gson-2.2.4/gson-2.2.4-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Documents/Education/University of London/Year 3/_Project/_Phase 3 - Construction/Google Gson 2.2.4 Library/google-gson-2.2.4/gson-2.2.4-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Documents/Education/University of London/Year 3/_Project/_Phase 3 - Construction/Google Gson 2.2.4 Library/google-gson-2.2.4/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Documents/Education/University of London/Year 3/_Project/_Phase 2 - Elaboration/3 Tools being analysed/stanford-ner-2014-01-04/stanford-ner-2014-01-04.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/attributes-binder-1.2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/carrot2-core-3.8.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/guava-14.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/hppc-0.5.2.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/jackson-core-asl-1.7.4.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/jackson-mapper-asl-1.7.4.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/lucene-analyzers-common-4.2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/lucene-analyzers-smartcn-4.2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/mahout-collections-1.0.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/mahout-math-0.6.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/simple-xml-2.7.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/required/slf4j-log4j12-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/attributes-processor-1.2.0.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/commons-codec-1.4.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/httpclient-4.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/httpcore-4.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/httpmime-4.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/jcl-over-slf4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/jdom-1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/lucene-core-4.2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/lucene-highlighter-4.2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/lucene-memory-4.2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/lucene-queries-4.2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/lucene-queryparser-4.2.1.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/morfologik-fsa-1.7.0.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/morfologik-polish-1.7.0.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/morfologik-stemming-1.7.0.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/rome-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/pnagashima/Projects/Java/Carrot2JavaTest/carrot2-java-api-3.8.1/lib/optional/rome-fetcher-1.0.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
