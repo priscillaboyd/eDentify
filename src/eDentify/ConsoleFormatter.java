@@ -2,7 +2,7 @@
 /*
  * Carrot2 project.
  *
- * Copyright (C) 2002-2013, Dawid Weiss, Stanisław Osiński.
+ * Copyright (C) 2002-2013, Dawid Weiss, Stanis��aw Osi��ski.
  * All rights reserved.
  *
  * Refer to the full license file "carrot2.LICENSE"
@@ -91,11 +91,12 @@ public class ConsoleFormatter
     {
         System.out.println("\n\nCreated " + clusters.size() + " clusters\n");
         int clusterNumber = 1;
-        for (final Cluster cluster : clusters)
         {
+        for (final Cluster cluster : clusters)
             displayCluster(0, "" + clusterNumber++, cluster, maxNumberOfDocumentsToShow,
                 clusterDetailsFormatter);
         }
+        
     }
 
     private static void displayDocument(final int level, Document document)

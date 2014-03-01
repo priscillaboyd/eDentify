@@ -18,6 +18,6 @@ public class Main {
 	    
 		GoogleSearchRetrieval search = new GoogleSearchRetrieval();
 		search.getResults(); //Run search engine and get results
-	    
+		
 	}
 }

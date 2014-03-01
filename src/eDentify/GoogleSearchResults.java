@@ -28,21 +28,21 @@ public class GoogleSearchResults {
 	
 	//Method to transform results to string and output them
 	public String toString(){
-		GoogleSearchPostProcessing fw = new GoogleSearchPostProcessing(); //Create new object for file write
+		FileHandler fw = new FileHandler(); //Create new object for file write
     	formatText(title);
     	formatText(snippet);
     	snippet = removeLineBreak(snippet);
     	
     	//Print out contents to screen
+    	System.out.println(urlLabel + link);
     	System.out.println(titleLabel + title);
-		System.out.println(urlLabel + link);
 		System.out.println(snippetLabel + snippet);
 		
 		//Write contents to file
-		fw.write(titleLabel, title);
-		fw.write(urlLabel, link);
-		fw.write(snippetLabel, snippet);
-		fw.write("---------- END OF RESULT -----------","");
+		fw.writeToFile(urlLabel, link, fw.file, false);
+		fw.writeToFile(titleLabel, title, fw.file, false);
+		fw.writeToFile(snippetLabel, snippet, fw.file, false);
+		fw.writeToFile("---------- END OF RESULT -----------","", fw.file, false);
 	    return "End of Result";
 	}
 

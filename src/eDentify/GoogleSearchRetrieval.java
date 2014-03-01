@@ -15,9 +15,9 @@ public class GoogleSearchRetrieval {
 	URL url = null;
 	HttpURLConnection conn;
 	Reader reader;
-	String key = "AIzaSyDI0Cc85fEiMElCwgyviEJ_SgdQFhlsMy8"; //API key provided by Google
+	String key = "AIzaSyD9-bcODFrrpwXRei56djeFBAtTlqo1f7M"; //API key provided by Google
 	String cx = "018126130119394071997:acq0r-m2iv0"; //Custom Search Engine ID provided by Google
-	String query = "%22Priscilla/Boyd%22"; // search key word - TODO: Remember the '/' for spacing and '%22' for quotes
+	String query = "%22James/Boyd%22"; // search key word - TODO: Remember the '/' for spacing and '%22' for quotes
 	String firstResultNo = "0";
 	int startResult = 0;
 	
@@ -50,12 +50,12 @@ public class GoogleSearchRetrieval {
 	
 	//Method to get the results
 	public void getResults(){
-		GoogleSearchPostProcessing pp = new GoogleSearchPostProcessing(); //Create object for next stage (i.e. pre-processing)
-		pp.setFile(); //Configure the results file for output
+		FileHandler pp = new FileHandler(); //Create object for next stage (i.e. pre-processing)
+		pp.setFile(pp.file); //Configure the results file for output
 		int resultNo = 0; 
 		int page = 1;
 		int resultPerPage = 10; //Only 10 allowed as per Google's T&Cs (Custom Search API rules)
-		int totalNoPages = 5; //5 pages only for test purposes
+		int totalNoPages = 10; //50 pages for test purposes
 		
 		while (page < totalNoPages+1){
 			 setConn(startResult); //set initial connection
@@ -70,9 +70,32 @@ public class GoogleSearchRetrieval {
 					results.getResult(i); //Get result within page visited
 					System.out.println("RESULT NUMBER: " + resultNo);
 					System.out.println("PAGE NUMBER: " + page);
-					System.out.println("---------------------");
+					System.out.println("---------- END OF RESULT -----------");
 			 }
 			 page++;
 		}
+		
+		getNE(); //Go to next processing (get Named Entities)
+		
 	 }
+	
+	//Method to get named entities
+	public void getNE(){
+		NamedEntityProcessing NEProcessing = new NamedEntityProcessing();
+		NEProcessing.processNamedEntity();
+		getPreClusteredResults(); //Go to next processing (get pre-clustered results with NEs)
+	}
+	
+	//Method to get the pre-clustered results with the named entities extracted
+	public void getPreClusteredResults(){
+		NamedEntityExtraction NEExtraction = new NamedEntityExtraction();
+		NEExtraction.extractNamedEntity();
+		getClusteredResults(); //Go to next processing (get clustered results)
+	}
+	
+	public void getClusteredResults(){
+		ClusteringProcessing ClusteredResults = new ClusteringProcessing();
+		ClusteredResults.clustering();
+	}
+	
 }
