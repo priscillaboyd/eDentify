@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import org.carrot2.clustering.lingo.LingoClusteringAlgorithm;
 import org.carrot2.clustering.lingo.LingoClusteringAlgorithmDescriptor;
 import org.carrot2.core.Cluster;
@@ -19,6 +20,8 @@ import org.carrot2.core.ControllerFactory;
 import org.carrot2.core.Document;
 import org.carrot2.core.ProcessingResult;
 import org.carrot2.core.attribute.CommonAttributesDescriptor;
+import org.carrot2.text.preprocessing.DocumentAssigner;
+import org.carrot2.text.preprocessing.DocumentAssignerDescriptor;
 
 public class ClusteringProcessing {
 
@@ -49,7 +52,12 @@ public class ClusteringProcessing {
 	        	}
 	        	
 	        	//Processing records that have only 2 (Title and URL)
-	        	else documents.add(new Document(records[1], "", records[0]));
+	        	else if (records.length == 2){
+	        		documents.add(new Document(records[1], "", records[0]));
+	        	}
+	        	
+	        	//Processing when records have 1 only (URL)
+	        	else documents.add(new Document("", "", records[0]));
 
 	        	//Go to next line
 	        	m=m+3;
@@ -64,7 +72,15 @@ public class ClusteringProcessing {
 		final Controller controller = ControllerFactory.createSimple();
         
         final Map<String, Object> attributes = new HashMap<String, Object>();
-        attributes.put(CommonAttributesDescriptor.Keys.QUERY, "James Boyd");
+        attributes.put(CommonAttributesDescriptor.Keys.QUERY, "John Smith England Devon");
+        
+        attributes.put("LingoClusteringAlgorithm.desiredClusterCountBase", 30);
+        attributes.put("LingoClusteringAlgorithm.clusterMergingThreshold", 0.7);
+        attributes.put("LingoClusteringAlgorithm.scoreWeight", 1.0); //size-score sorting ration
+        attributes.put("LingoClusteringAlgorithm.titleWordsBoost",2.0);
+        attributes.put("DocumentAssignerDescriptor.exactPhraseAssignment",false);
+        
+        //attributes.put("LingoClusteringAlgorithm.matrixBuilder",0);
         CommonAttributesDescriptor
         .attributeBuilder(attributes)
         	.documents(documents)
@@ -72,13 +88,15 @@ public class ClusteringProcessing {
         
         //attributes.put(DocumentAssignerDescriptor.Keys.MIN_CLUSTER_SIZE, 3);
         
+        DocumentAssignerDescriptor
+        .attributeBuilder(attributes);
+        
         LingoClusteringAlgorithmDescriptor
-        .attributeBuilder(attributes)
-        .scoreWeight(0.5) //test
-        .desiredClusterCountBase(15) //15 was the usual
+        .attributeBuilder(attributes);
+       // .desiredClusterCountBase(15) //15 was the usual
         //.matrixReducer()
-        .matrixBuilder()
-        	.titleWordsBoost(2); //boost to title word
+        //.matrixBuilder()
+       // 	.titleWordsBoost(8.5); //boost to title word
         //.factorizationQuality(FactorizationQuality.HIGH);
         
         final ProcessingResult result = controller.process(attributes, LingoClusteringAlgorithm.class);

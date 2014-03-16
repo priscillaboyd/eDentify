@@ -4,9 +4,10 @@ import java.util.List;
 
 public class GoogleSearchResults {
 
-	public String link, title, snippet;
+	public String link, title, snippet, totalResults;
 	public String urlLabel = "URL: ", titleLabel = "TITLE: ", snippetLabel = "SNIPPET: ";
 	public List<GoogleSearchResults> items;
+	
 	
 	//Method to format results and remove HTML characters from text
 	public void formatText(String text){
@@ -19,7 +20,7 @@ public class GoogleSearchResults {
 		return text;
 	}
 	
-	//Method to get result
+	//Method to get results
 	public void getResult (int i){
 		String result = items.get(i).toString();
 		formatText(result);
@@ -43,7 +44,7 @@ public class GoogleSearchResults {
 		fw.writeToFile(titleLabel, title, fw.file, false);
 		fw.writeToFile(snippetLabel, snippet, fw.file, false);
 		fw.writeToFile("---------- END OF RESULT -----------","", fw.file, false);
-	    return "End of Result";
+	    return "";
 	}
 
 }

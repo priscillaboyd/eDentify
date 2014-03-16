@@ -14,9 +14,18 @@ package eDentify;
 
 public class Main {
 	
-	public static void main(String[] args) {
-	    
+	static String name;
+	static String county;
+	static String country;
+	
+	public static void main(String[] args){
+		CommandLineProcessing obj = new CommandLineProcessing();
+		obj.showOptions();
+
 		GoogleSearchRetrieval search = new GoogleSearchRetrieval();
+		search.setQuery(name, county, country);
+		
+		System.out.println(name);
 		search.getResults(); //Run search engine and get results
 		
 	}

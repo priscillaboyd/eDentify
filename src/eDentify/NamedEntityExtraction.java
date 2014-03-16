@@ -40,8 +40,6 @@ public class NamedEntityExtraction {
 	            for (int i=0; i<headers.length; i++){
 	            	String searchString = headers[i].toString();
 	            	
-	            	//TODO: ADD URL to file
-	            	
 	            	//Process line that contains one of the search strings
 	            	if (line.contains(searchString)){
 	            		
@@ -56,10 +54,10 @@ public class NamedEntityExtraction {
 			            		fw.writeCSVEntry(line);
 		            		}
 		            		
-		            		if (line.contains("<PERSON>")){
+		            		/*if (line.contains("<PERSON>")){
 			            		NamedEntityNodeExpansion node = new NamedEntityNodeExpansion();            		
 			            		node.getTag("PEOPLE", "<PERSON>", "</PERSON>", reader, line, mainList, subitem);
-		            		}
+		            		}*/
 			            		            	
 			            	if (line.contains("<ORGANIZATION>")){
 			            		NamedEntityNodeExpansion node = new NamedEntityNodeExpansion();
@@ -70,6 +68,11 @@ public class NamedEntityExtraction {
 			            		NamedEntityNodeExpansion node = new NamedEntityNodeExpansion();
 			            		node.getTag("LOCATIONS", "<LOCATION>", "</LOCATION>", reader, line, mainList, subitem);
 			            	}
+			            	
+			            	/*if (line.contains("<MISC>")){
+			            		NamedEntityNodeExpansion node = new NamedEntityNodeExpansion();
+			            		node.getTag("MISC", "<MISC>", "</MISC>", reader, line, mainList, subitem);
+			            	}*/
 			            	
 			            	//Add ';' between named entities for all entities
 			            	for (int j=0; j<mainList.size(); j++){

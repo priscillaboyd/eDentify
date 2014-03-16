@@ -20,18 +20,19 @@ public class NamedEntityProcessing {
 	
 	//Method to process the named entities
 	public void processNamedEntity(){
-		String serializedClassifier = "classifiers/english.all.3class.distsim.crf.ser.gz";
+		String serializedClassifier = "classifiers/english.all.3class.distsim.crf.ser.gz"; //3 class (PERSON, LOCATION and ORGANISATION) classifier
+		//String serializedClassifier = "classifiers/english.conll.4class.distsim.crf.ser.gz";
 		AbstractSequenceClassifier<CoreLabel> classifier = CRFClassifier.getClassifierNoExceptions(serializedClassifier);
 		FileHandler fw = new FileHandler();
+		  org.apache.log4j.PropertyConfigurator.configure(fw.filenameLog4JConfig);
 	      Path path = Paths.get(fw.filename); //path for input file
 	      
 	      try (BufferedReader reader = Files.newBufferedReader(path, Charset.defaultCharset())){
-	    	  fw.setFile(fw.fileResultsWithNER); //delete contents to file before starting the process, just in case!
+	    	  fw.setFile(fw.fileResultsWithNER); //delete contents to file before starting the process
 	    	  String line = null;
 	    	  while ((line = reader.readLine()) != null) {
 	    		  String classifiedData = classifier.classifyWithInlineXML(line);
 	    		  fw.writeToFile("", classifiedData, fw.fileResultsWithNER, true);
-	    		  System.out.println(classifiedData);
 	    	  }
 	      } catch (IOException e) { e.printStackTrace(); }
 		

@@ -87,14 +87,14 @@ public class ConsoleFormatter
     }
 
     public static void displayClusters(final Collection<Cluster> clusters,
-        int maxNumberOfDocumentsToShow, ClusterDetailsFormatter clusterDetailsFormatter)
-    {
+        int maxNumberOfDocumentsToShow, ClusterDetailsFormatter clusterDetailsFormatter){
         System.out.println("\n\nCreated " + clusters.size() + " clusters\n");
         int clusterNumber = 1;
-        {
-        for (final Cluster cluster : clusters)
-            displayCluster(0, "" + clusterNumber++, cluster, maxNumberOfDocumentsToShow,
-                clusterDetailsFormatter);
+        	
+        for (final Cluster cluster : clusters){
+        	System.out.println(">> Person Number " + clusterNumber + " <<");
+        	displayCluster(0, "" + clusterNumber++, cluster, maxNumberOfDocumentsToShow,
+                    clusterDetailsFormatter);
         }
         
     }
@@ -104,12 +104,27 @@ public class ConsoleFormatter
         final String indent = getIndent(level);
 
         System.out.printf(indent + "[%2s] ", document.getStringId());
-        System.out.println(document.getField(Document.TITLE));
+        
+        final String title = document.getField(Document.TITLE);
+        if (StringUtils.isNotBlank(title))
+        {
+        	System.out.println("KEYWORDS IN TITLE: " + title);
+        }
+        else System.out.println("KEYWORDS IN TITLE: None");
+        
         final String url = document.getField(Document.CONTENT_URL);
         if (StringUtils.isNotBlank(url))
         {
             System.out.println(indent + "     " + url);
         }
+        
+        final String summary = document.getField(Document.SUMMARY);
+        if (StringUtils.isNotBlank(summary))
+        {
+        	System.out.println("       " + "KEYWORDS IN SNIPPET: " + summary);
+        }
+        else System.out.println("       " + "KEYWORDS IN SNIPPET: None");
+        
         System.out.println();
     }
 
@@ -123,8 +138,8 @@ public class ConsoleFormatter
         {
             System.out.print("  ");
         }
-        System.out.println(label + "  "
-            + clusterDetailsFormatter.formatClusterDetails(cluster));
+        
+        System.out.println("Keyword: " + label + "  " + clusterDetailsFormatter.formatClusterDetails(cluster));
 
         // if this cluster has documents, display three topmost documents.
         int documentsShown = 0;
@@ -146,6 +161,7 @@ public class ConsoleFormatter
 
         // finally, if this cluster has subclusters, descend into recursion.
         final int num = 1;
+        int a = 0;
         for (final Cluster subcluster : cluster.getSubclusters())
         {
             displayCluster(level + 1, tag + "." + num, subcluster,

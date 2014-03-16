@@ -8,12 +8,14 @@ public class FileHandler {
 	String defaultLocation = System.getProperty("user.dir");
 	String preProcessFolder = "/src/eDentify/preprocess/"; //PreProcess folder is being used to contain all files/data that is used before clustering
 	String clusteringFolder = "/src/eDentify/clustering/"; //Clustering folder is being used to contain all files/data that is used for clustering
+	String configFolder = "/config/";
 	
 	//Define filenames for text files used
 	String filename = defaultLocation + preProcessFolder + "results.txt";
 	String filenameResultsWithNER = defaultLocation + preProcessFolder + "resultsWithNER.txt";
 	String filenamePreClusteredResults = defaultLocation + clusteringFolder + "preClusteredResults.txt";
 	String filenameClusteredResults = defaultLocation + clusteringFolder + "clusteredResults.txt";
+	String filenameLog4JConfig = defaultLocation + configFolder + "log4j.properties";
 	
 	//Create objects for each of the files being handled
 	File file = new File(filename); //File object using filename defined
